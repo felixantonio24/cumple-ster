@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-family: 'Comic Neue', cursive;
+}
+
+:root {
+    --loading-width: 160px;
+    --loading-heigth: 23px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    text-align: center;
+    width: 90vw;
+}
+
+#loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    display: none; /* Oculto inicialmente */
+    border: solid black 4px;
+    width: var(--loading-width);
+    background-color: white;
+}
+
+.loading-bar {
+    height: var(--loading-heigth);
+    width: 0;
+    background-color: rgb(226, 43, 43);
+    transition: width 5s ease; /* Animación al hacer clic */
+}
+
+#state-message {
+    font-size: larger;
+    font-weight: bold;
+    color: rgb(109, 109, 109);
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: var(--loading-width);
+    }
+}
+
+#title,
+#result {
+    margin-top: 8px;
+    margin-bottom: 10px;
+
+}
+
+#me {
+    margin-top: 8px;
+    margin-bottom: 14px;
+}
+
+.buton {
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    width: 20%;
+    color: white;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+button:hover {
+    background-color: rgb(245, 245, 245);
+    color: black;
+    transition: 0.8s all;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.308);
+
+}
+#final-image {
+    display: none;
+    width: 200px; /* Ajusta este valor para hacer la imagen más grande */
+}
+
+@media (max-width: 600px) {
+    .buton {
+        font-size: 25px;
+        width: 10rem; /* Tamaño de fuente aún más pequeño para pantallas pequeñas */
+    }
+    
+    #state-message {
+        font-size: 20px; /* Tamaño de fuente para el mensaje de estado */
+    }
+    
+    #result {
+        font-size: 28px; /* Tamaño de fuente para el resultado */
+    }
+}
